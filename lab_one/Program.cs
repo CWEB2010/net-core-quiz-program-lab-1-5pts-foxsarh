@@ -1,20 +1,25 @@
-﻿/* START
+﻿/* // Using statements that brings in code to construct program (i.e. using System or using Console)
+ * 
+ * // Start and stop represent my main method
+ * START
  *     DECLARATIONS
+ *          // This is the data that I'll need for this program 
  *          string answerKey [] = {"B","B","C"}
  *          string userChoices [3];
  *          string userSelection 
  *          string questions[] = {"What year did .NET Core come out?",
  *                               "What versions is .NET Core currently",
  *                               "Who created .NET Core?"}
+ *          // Two dimensional array
  *          string optionChoices[ , ] = {
  *                                          {"A) 2007", "B) 2014", "C) 1994", "D) 2022"},
  *                                          {"A) 1.2", "B) 3.1", "C) 10.0", "D) 2.2"},
  *                                          {"A) Google", "B) Facebook", "C) Microsoft", "D) Dunwoody"}
  *                                      }
- *          num primingValue = 1;
- *          num EXIT = 2; //Sentinal Value which allows you to exit
- *          num x,y
- *          num totalCorrect = 0, totalIncorrect = 0;
+ *          num primingValue = 1; // Priming value which starts the program
+ *          num EXIT = 2; //Sentinal Value which allows you to exit the program
+ *          num x,y;
+ *          num totalCorrect, totalIncorrect;
  *          
  *          OUTPUT "Welcome, this is a quiz on .NET Core. This quiz will consist of 3 questions.
  *                  You must have 2 out of 3 correct to pass the quiz."
@@ -51,8 +56,7 @@
  *                  ENDIF
  *                  
  *                  // Adding user input to userChoices array
- *                  userChoices [x] = userSelection; 
- *               
+ *                  userChoices [x] = userSelection;  
  *                  
  *              ENDFOR
  *              
@@ -83,9 +87,26 @@ namespace lab_one
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Sarah!");
+            // Declaring Variables 
+            string [] answerKey = { "B","B","C","A","D","A","A","C","D","A" };
+            string [] userChoices = new string[] { }; // this is an empty string
+            string [] questions = { "What year was .NET Core developed?","What is the latest version of .NET Core?","Who created .NET Core?" };
+            // two dimensional array
+            string[,] optionChoices = {
+                { "A) 2007", "B) 2014", "C) 1994", "D) 2022" },
+                {"A) 1.2","B) 3.1","C) 10.0","D) 2.2" },
+                {"A) Google","B) Facebook","C) Microsoft","D) Dunwoody" }
+                                      };
+            ConsoleKey primingValue = ConsoleKey.Enter;
+            ConsoleKey sentinelValue = ConsoleKey.Escape;
+            int totalCorrect, totalIncorrect;
 
-            string[] questions = { "What year did this start", "when do classes end?" };
+            // Welcome Message
+            Console.WriteLine("Welcome, this is a quiz on .NET Core. This quiz will consist of 3 questions.\n" +
+                               "You must have 2 out of 3 correct to pass the quiz.\n" +
+                               "To get started, please enter 1 to start the program");
+
+
             int x;
 
             // looping structure to loop through the questions and only print as many questions as are in the questions array
@@ -94,6 +115,6 @@ namespace lab_one
                 Console.WriteLine(questions[x]);
             }
                     
-        }
+        }// end of main
     }
 }
