@@ -90,6 +90,7 @@ namespace lab_one
             // Declaring Variables 
             string [] answerKey = { "B","B","C","A","D","A","A","C","D","A" };
             string [] userChoices = new string[] { }; // this is an empty string
+            string userSelection;
             string [] questions = { "What year was .NET Core developed?","What is the latest version of .NET Core?","Who created .NET Core?" };
             // two dimensional array
             string[,] optionChoices = {
@@ -104,17 +105,40 @@ namespace lab_one
             // Welcome Message
             Console.WriteLine("Welcome, this is a quiz on .NET Core. This quiz will consist of 3 questions.\n" +
                                "You must have 2 out of 3 correct to pass the quiz.\n" +
-                               "To get started, please enter 1 to start the program");
+                               "To get started, please any key to start the program");
 
+            // Get priming value
+            ConsoleKey userInput = Console.ReadKey().Key; // grabs the enter key 
+            while (userInput != sentinelValue)
+            {
+                int x,y;
+                totalCorrect = 0;
+                totalIncorrect = 0;
+                // looping structure to loop through the questions and only print as many questions as are in the questions array
+                // the x++ is what makes it add 1 to each iteration
+                for (x = 0; x < questions.Length; x++)
+                {
+                    Console.WriteLine(questions[x]);
 
-            int x;
+                    for (y = 0; y < optionChoices.GetLength(1); y++)
+                    {
+                        Console.WriteLine(optionChoices[x, y]);    
+                    }
 
-            // looping structure to loop through the questions and only print as many questions as are in the questions array
-            // the x++ is what makes it add 1 to each iteration
-            for (x = 0; x < questions.Length; x++){
-                Console.WriteLine(questions[x]);
+                    Console.WriteLine("Please enter your selection");
+                    userSelection = Console.ReadLine().ToUpper();
+
+                }
+                break;
             }
+
+            if (userInput == sentinelValue) 
+            {
+                Console.WriteLine("Thank you for taking the .NET Core quiz");
+                Environment.Exit(0);
+            }
+
                     
         }// end of main
-    }
+    } // end of class
 }
