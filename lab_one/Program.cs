@@ -91,7 +91,17 @@ namespace lab_one
             string [] answerKey = { "B","B","C","A","D","A","A","C","D","A" };
             string [] userChoices = new string[] { }; // this is an empty string
             string userSelection;
-            string [] questions = { "What year was .NET Core developed?","What is the latest version of .NET Core?","Who created .NET Core?" };
+            string [] questions = { "1. What gives .NET Core its basic services?",
+                                    "2. How many developers were needed to build the .NET Core platform?",
+                                    "3. Fill in the blank. .NET Core is an ____ Development tool",
+                                    "4.	Which of these is .NET Core most similar to?",
+                                    "5.	Which of these following platforms will .NET Core",
+                                    "6.	What does CIL stand for?",
+                                    "7.  What does JIT stand for?",
+                                    "8.	What does garbage collection do?",
+                                    "9.	Which of the following is true about .NET Core?",
+                                    "10. Why was .NET Core created?"
+            };
             // two dimensional array
             string[,] optionChoices = {
                 { "A) 2007", "B) 2014", "C) 1994", "D) 2022" },
@@ -104,8 +114,9 @@ namespace lab_one
 
             // Welcome Message
             Console.WriteLine("Welcome, this is a quiz on .NET Core. This quiz will consist of 3 questions.\n" +
-                               "You must have 2 out of 3 correct to pass the quiz.\n" +
-                               "Please press any key to start the program");
+                               "You must have 7 out of 10 correct to pass the quiz.\n" +
+                               "Please press any key to start the program\n" +
+                               "To exit the program, please press escape");
 
             // Get priming value
             ConsoleKey userInput = Console.ReadKey().Key; // grabs any key input
@@ -143,10 +154,10 @@ namespace lab_one
 
                 Console.WriteLine("The quiz has concluded, your results are listed below");
                 Console.WriteLine("Total Correct = " + totalCorrect);
-                Console.WriteLine("Total Incorrect =" + totalIncorrect);
+                Console.WriteLine("Total Incorrect = " + totalIncorrect);
 
                 // Decision logic to determine if they passed the quiz
-                if (totalCorrect >= 2)
+                if (totalCorrect >= 7)
                 {
                     Console.WriteLine("You passed!");
                 }
@@ -171,7 +182,7 @@ namespace lab_one
 
             if (userInput == sentinelValue) 
             {
-                Console.WriteLine("Thank you for taking the .NET Core quiz");
+                Console.WriteLine(" Thank you for taking the .NET Core quiz");
                 Environment.Exit(0);
             }
 
