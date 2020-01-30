@@ -98,20 +98,20 @@ namespace lab_one
                 {"A) 1.2","B) 3.1","C) 10.0","D) 2.2" },
                 {"A) Google","B) Facebook","C) Microsoft","D) Dunwoody" }
                                       };
-            ConsoleKey primingValue = ConsoleKey.Enter;
+            ConsoleKey primingValue = ConsoleKey.D2;
             ConsoleKey sentinelValue = ConsoleKey.Escape;
             int totalCorrect, totalIncorrect;
 
             // Welcome Message
             Console.WriteLine("Welcome, this is a quiz on .NET Core. This quiz will consist of 3 questions.\n" +
                                "You must have 2 out of 3 correct to pass the quiz.\n" +
-                               "To get started, please any key to start the program");
+                               "Please press any key to start the program");
 
             // Get priming value
-            ConsoleKey userInput = Console.ReadKey().Key; // grabs the enter key 
+            ConsoleKey userInput = Console.ReadKey().Key; // grabs any key input
             while (userInput != sentinelValue)
             {
-                int x,y;
+                int x,y; 
                 totalCorrect = 0;
                 totalIncorrect = 0;
                 // looping structure to loop through the questions and only print as many questions as are in the questions array
@@ -128,9 +128,46 @@ namespace lab_one
                     Console.WriteLine("Please enter your selection");
                     userSelection = Console.ReadLine().ToUpper();
 
+                    if (userSelection == answerKey[x])
+                    {
+                        totalCorrect = totalCorrect + 1;
+                        Console.WriteLine("You got it right");
+                    }
+
+                    else
+                    {
+                        totalIncorrect++;
+                        Console.WriteLine("You got it wrong");
+                    }
+                } // End of 1st for loop
+
+                Console.WriteLine("The quiz has concluded, your results are listed below");
+                Console.WriteLine("Total Correct = " + totalCorrect);
+                Console.WriteLine("Total Incorrect =" + totalIncorrect);
+
+                // Decision logic to determine if they passed the quiz
+                if (totalCorrect >= 2)
+                {
+                    Console.WriteLine("You passed!");
                 }
-                break;
-            }
+
+                else
+                {
+                    Console.WriteLine("Sorry, you failed.");
+                }
+
+                // Ask user if they want to retake  the quiz
+                Console.WriteLine("\nTo retake the quiz, please press enter\n" +
+                    "To exit the program, please press escape.");
+                ConsoleKey userInput2 = Console.ReadKey().Key;
+                if (userInput2 == sentinelValue)
+                {
+                    break;
+                }
+
+            
+            } // End of while loop
+
 
             if (userInput == sentinelValue) 
             {
