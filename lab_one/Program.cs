@@ -1,4 +1,5 @@
-﻿/* // Using statements that brings in code to construct program (i.e. using System or using Console)
+﻿/* //S. Fox
+ * // Using statements that brings in code to construct program (i.e. using System or using Console)
  * 
  * // Start and stop represent my main method
  * START
@@ -104,9 +105,16 @@ namespace lab_one
             };
             // two dimensional array
             string[,] optionChoices = {
-                { "A) 2007", "B) 2014", "C) 1994", "D) 2022" },
-                {"A) 1.2","B) 3.1","C) 10.0","D) 2.2" },
-                {"A) Google","B) Facebook","C) Microsoft","D) Dunwoody" }
+                {"A) Networking", "B) .NET Runtime", "C) Internet Protocol", "D) Architecture" },
+                {"A) 1","B) 10,000","C) 50,000","D) 768" },
+                {"A) Platform-dependent","B) Difficult","C) Agile","D) Foreign" },
+                {"A) .NET Framework","B) iOS","C) Python","D) DHCP" },
+                {"A) Windows","B) Mac OS X","C) Linux","D) All of the above" },
+                {"A) Common Intermediate Language","B) Command Intercept Line","C) Creative Interface Languages","D) Core Intuitive Libraries" },
+                {"A) Just-in-time","B) Java Interface Technician","C) Just-inside-technology","D) Joint Integration Telecommunication" },
+                {"A) People who pick up my trash","B) Deletes syntax errors","C) Frees up memory used from an app that's no longer in use","D) Debugging" },
+                {"A) It is open-source","B) It is still under construction","C) It was created by Microsoft","D) All of the above" },
+                {"A) To offer a more versatile, cross-platform product","B) To impose stricter rules on the .NET Framework","C) To replace C#","To create a better method for debugging code" }
                                       };
             ConsoleKey primingValue = ConsoleKey.D2;
             ConsoleKey sentinelValue = ConsoleKey.Escape;
