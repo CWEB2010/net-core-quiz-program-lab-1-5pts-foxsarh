@@ -154,15 +154,17 @@ namespace lab_one
                     if (userSelection == answerKey[x])
                     {
                         totalCorrect = totalCorrect + 1; //Same thing as totalCorrect++
-                        Console.WriteLine("You got it right!\n");
-                        //Console.ReadKey();
-                        //Console.Clear();
+                        Console.WriteLine("You got it right!\nPress any key to continue.");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
 
                     else
                     {
                         totalIncorrect++;
-                        Console.WriteLine("You got it wrong\n");
+                        Console.WriteLine("You got it wrong.\nPress any key to continue.");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
                 } // End of 1st for loop
 
@@ -196,8 +198,8 @@ namespace lab_one
 
             if (userInput == sentinelValue) 
             {
-                Console.WriteLine(" Thank you for taking the .NET Core quiz");
-                Environment.Exit(0);
+                Console.WriteLine("TThank you for taking the .NET Core quiz"); //The "T" isn't showing up unless I add two of them, not sure why?
+                
             }
 
                     
