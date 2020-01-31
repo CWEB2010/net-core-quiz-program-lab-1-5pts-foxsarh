@@ -10,7 +10,11 @@
  *          string userSelection 
  *          string questions[] = {"What year did .NET Core come out?",
  *                               "What versions is .NET Core currently",
- *                               "Who created .NET Core?"}
+ *  
+ *  
+ *  
+ *  
+ *  kjg"Who created .NET Core?"}
  *          // Two dimensional array
  *          string optionChoices[ , ] = {
  *                                          {"A) 2007", "B) 2014", "C) 1994", "D) 2022"},
@@ -92,16 +96,16 @@ namespace lab_one
             string [] answerKey = { "B","B","C","A","D","A","A","C","D","A" };
             string [] userChoices = new string[] { }; // this is an empty string
             string userSelection;
-            string [] questions = { "1. What gives .NET Core its basic services?",
-                                    "2. How many developers were needed to build the .NET Core platform?",
-                                    "3. Fill in the blank. .NET Core is an ____ Development tool",
-                                    "4.	Which of these is .NET Core most similar to?",
-                                    "5.	Which of these following platforms will .NET Core",
-                                    "6.	What does CIL stand for?",
-                                    "7.  What does JIT stand for?",
-                                    "8.	What does garbage collection do?",
-                                    "9.	Which of the following is true about .NET Core?",
-                                    "10. Why was .NET Core created?"
+            string [] questions = { "What gives .NET Core its basic services?",
+                                    "How many developers were needed to build the .NET Core platform?",
+                                    "Fill in the blank. .NET Core is an ____ Development tool.",
+                                    "Which of these is .NET Core most similar to?",
+                                    "Which of the following platforms will work with .NET Core?",
+                                    "What does CIL stand for?",
+                                    "What does JIT stand for?",
+                                    "What does garbage collection do?",
+                                    "Which of the following is true about .NET Core?",
+                                    "Why was .NET Core created?"
             };
             // two dimensional array
             string[,] optionChoices = {
@@ -121,12 +125,13 @@ namespace lab_one
             int totalCorrect, totalIncorrect;
 
             // Welcome Message
-            Console.WriteLine("Welcome, this is a quiz on .NET Core. This quiz will consist of 3 questions.\n" +
+            Console.WriteLine("Welcome, this is a quiz on .NET Core. This quiz will consist of 10 questions.\n" +
                                "You must have 7 out of 10 correct to pass the quiz.\n" +
                                "Please press any key to start the program\n" +
                                "To exit the program, please press escape");
 
             // Get priming value
+            Console.ReadKey();
             ConsoleKey userInput = Console.ReadKey().Key; // grabs any key input
             while (userInput != sentinelValue)
             {
