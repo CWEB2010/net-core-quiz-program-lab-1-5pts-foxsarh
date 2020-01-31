@@ -118,7 +118,7 @@ namespace lab_one
                 {"A) Just-in-time","B) Java Interface Technician","C) Just-inside-technology","D) Joint Integration Telecommunication" },
                 {"A) People who pick up my trash","B) Deletes syntax errors","C) Frees up memory used from an app that's no longer in use","D) Debugging" },
                 {"A) It is open-source","B) It is still under construction","C) It was created by Microsoft","D) All of the above" },
-                {"A) To offer a more versatile, cross-platform product","B) To impose stricter rules on the .NET Framework","C) To replace C#","To create a better method for debugging code" }
+                {"A) To offer a more versatile, cross-platform product","B) To impose stricter rules on the .NET Framework","C) To replace C#","D) To create a better method for debugging code" }
                                       };
             ConsoleKey primingValue = ConsoleKey.D2;
             ConsoleKey sentinelValue = ConsoleKey.Escape;
@@ -128,10 +128,9 @@ namespace lab_one
             Console.WriteLine("Welcome, this is a quiz on .NET Core. This quiz will consist of 10 questions.\n" +
                                "You must have 7 out of 10 correct to pass the quiz.\n" +
                                "Please press any key to start the program\n" +
-                               "To exit the program, please press escape");
+                               "To exit the program, please press escape\n");
 
             // Get priming value
-            Console.ReadKey();
             ConsoleKey userInput = Console.ReadKey().Key; // grabs any key input
             while (userInput != sentinelValue)
             {
@@ -149,19 +148,21 @@ namespace lab_one
                         Console.WriteLine(optionChoices[x, y]);    
                     }
 
-                    Console.WriteLine("Please enter your selection");
+                    Console.WriteLine("\nPlease enter your selection");
                     userSelection = Console.ReadLine().ToUpper();
 
                     if (userSelection == answerKey[x])
                     {
-                        totalCorrect = totalCorrect + 1;
-                        Console.WriteLine("You got it right");
+                        totalCorrect = totalCorrect + 1; //Same thing as totalCorrect++
+                        Console.WriteLine("You got it right!\n");
+                        //Console.ReadKey();
+                        //Console.Clear();
                     }
 
                     else
                     {
                         totalIncorrect++;
-                        Console.WriteLine("You got it wrong");
+                        Console.WriteLine("You got it wrong\n");
                     }
                 } // End of 1st for loop
 
