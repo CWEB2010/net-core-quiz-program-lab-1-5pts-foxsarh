@@ -184,7 +184,7 @@ namespace lab_one
                 }
 
                 // Ask user if they want to retake  the quiz
-                Console.WriteLine("\nTo retake the quiz, please press enter\n" +
+                Console.WriteLine("\nTo retake the quiz, please press enter --or--\n" +
                     "To exit the program, please press escape.");
                 ConsoleKey userInput2 = Console.ReadKey().Key;
                 if (userInput2 == sentinelValue)
